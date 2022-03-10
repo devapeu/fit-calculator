@@ -84,19 +84,21 @@ export default {
   },
   computed: {
     macroResult() {
-      let proteinValue, carbosValue, fatsValue, genderFactor;
+      let proteinValue, carbosValue, fatsValue, caloriesSpending;
 
-      genderFactor = this.gender == 'male' ? 66 : 655;
-
-      const caloriesSpending =
-        this.activity *
-        ((13.75 * this.weight) + (5 * this.height) - (6.76 * this.age) + genderFactor);
+      if (this.gender == 'male') {
+        caloriesSpending = this.activity * ((13.75 * this.weight) + (5 * this.height) - (6.76 * this.age) + 66);
+      } else if (this.gender == 'female') {
+        caloriesSpending = this.activity * ((9.56 * this.weight) + (1.85 * this.height) - (4.68 * this.age) + 655);
+      }
 
       if (this.objective == "definition") {
+        caloriesSpending = caloriesSpending - caloriesSpending * 0.15;
         proteinValue = (caloriesSpending * 0.45) / 4;
         carbosValue = (caloriesSpending * 0.35) / 4;
         fatsValue = (caloriesSpending * 0.2) / 9;
       } else if (this.objective == "volume") {
+        caloriesSpending = caloriesSpending + caloriesSpending * 0.15;
         proteinValue = (caloriesSpending * 0.4) / 4;
         carbosValue = (caloriesSpending * 0.4) / 4;
         fatsValue = (caloriesSpending * 0.2) / 9;
