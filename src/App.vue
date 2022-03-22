@@ -131,8 +131,18 @@ export default {
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color-100: #dbeafe;
+  --primary-color-300: #93c5fd;
+  --primary-color-400: #60a5fa;
+  --primary-color-500: #3b82f6;
+  --primary-color-600: #2563eb;
+  --gray-50: #f8fafc;
+  --gray-900: #0f172a;
+}
+
 body {
-  background-color: #f8fafc;
+  background-color: var(--gray-50);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -143,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", sans-serif;
   max-width: 36rem;
   margin: 0 auto;
-  color: #0f172a;
+  color: var(--gray-900);
   padding: 0 1rem;
 }
 
@@ -192,6 +202,6 @@ fieldset {
   padding: 1rem;
   border: none;
   border-radius: 0.25rem;
-  background-color: #3b82f6;
+  background-color: var(--primary-color-500);
 }
 </style>

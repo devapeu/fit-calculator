@@ -56,7 +56,7 @@ export default {
 
 .fit__macro-list__title {
   text-transform: uppercase;
-  color: #3b82f6;
+  color: var(--primary-color-500);
   font-weight: bold;
   font-size: 0.85rem;
 }

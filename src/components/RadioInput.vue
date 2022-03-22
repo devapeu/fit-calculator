@@ -63,8 +63,8 @@ export default {
 
 .fit__radio__box {
   padding: 1em;
-  background-color: #fff;
-  border: 1px solid #93c5fd;
+  background-color: var(--gray-50);
+  border: 1px solid var(--primary-color-300);
   border-radius: 0.25rem;
   cursor: pointer;
 
@@ -77,12 +77,12 @@ export default {
 
 .fit__radio__check:checked {
   & + .fit__radio__box {
-    background-color: #dbeafe;
-    border-color: #2563eb;
+    background-color: var(--primary-color-100);
+    border-color: var(--primary-color-600);
   }
 
   & + .fit__radio__box .fit__radio__icon {
-    border-color: #2563eb;
+    border-color: var(--primary-color-500);
   }
 
   & + .fit__radio__box .fit__radio__icon:after {
@@ -95,7 +95,7 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 999px;
-    background-color: #60a5fa;
+    background-color: var(--primary-color-400);
   }
 }
 
@@ -103,7 +103,7 @@ export default {
   height: 2rem;
   width: 2rem;
   border-radius: 9999px;
-  border: 1px solid #93c5fd;
+  border: 1px solid var(--primary-color-300);
   position: relative;
 }
 

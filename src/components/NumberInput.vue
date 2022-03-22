@@ -32,7 +32,7 @@ export default {
   width: 100%;
   font-size: 1.25rem;
   padding: 1em;
-  border: 1px solid #93c5fd;
+  border: 1px solid var(--primary-color-300);
   border-radius: 0.25rem;
 }
 
