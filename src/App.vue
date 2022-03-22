@@ -56,12 +56,17 @@
   <button class="fit__btn" type="button" @click="printResult">Calcular</button>
   </form>
   <ResultsBox v-if="showResult" :results="printedResult"/>
+  <PromoBox>
+    <h2 class="title">¿Necesitas un programa de nutrición personalizado?</h2>
+    <a class="btn fit__btn" href="">Consigue tus planes de nutrición aquí. </a>
+  </PromoBox>
 </template>
 
 <script>
 import RadioInput from "./components/RadioInput.vue";
 import NumberInput from "./components/NumberInput.vue";
 import ResultsBox from "./components/ResultsBox.vue"
+import PromoBox from "./components/PromoBox.vue"
 
 export default {
   name: "App",
@@ -69,6 +74,7 @@ export default {
     RadioInput,
     NumberInput,
     ResultsBox,
+    PromoBox
   },
   data() {
     return {
@@ -196,12 +202,15 @@ fieldset {
 }
 
 .fit__btn {
-  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
+  display: inline-block;
   color: white;
   font-size: 1.25rem;
   padding: 1rem;
   border: none;
   border-radius: 0.25rem;
   background-color: var(--primary-color-500);
+  grid-column: span 3;
 }
 </style>
