@@ -60,8 +60,8 @@
   </div>
   <PromoBox>
     <h2 class="title">¿Quieres un programa de nutrición personalizado?</h2>
-    <a class="fit__btn fit__btn--outline" href="https://ricardoeliascoach.com/nutricion">Planes de Nutrición para Mujeres</a>
-    <a class="fit__btn fit__btn--outline fit__btn--orange" href="https://liaolite.com/nutricion">Planes de Nutrición para Hombres</a>
+    <a class="fit__btn fit__btn--outline" href="https://ricardoeliascoach.com/nutricion">Planes de Nutrición para Hombres</a>
+    <a class="fit__btn fit__btn--outline fit__btn--orange" href="https://liaolite.com/nutricion">Planes de Nutrición para Mujeres</a>
   </PromoBox>
 </template>
 
