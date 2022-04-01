@@ -231,6 +231,10 @@ fieldset {
       margin-left: 1rem;
       border: 2px solid #ea580c;
       color: #ea580c;
+
+      @media screen and (max-width: 480px) {
+        margin-left: 0;
+      }
     }
   }
 }
