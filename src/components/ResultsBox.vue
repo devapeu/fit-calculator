@@ -59,6 +59,10 @@ export default {
   color: var(--primary-color-500);
   font-weight: bold;
   font-size: 0.85rem;
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.75rem;
+  }
 }
 
 .fit__text-xl {
