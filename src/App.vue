@@ -103,14 +103,14 @@ export default {
 
       if (this.objective == "definition") {
         caloriesSpending = caloriesSpending - caloriesSpending * 0.15;
-        proteinValue = (caloriesSpending * 0.45) / 4;
-        carbosValue = (caloriesSpending * 0.35) / 4;
-        fatsValue = (caloriesSpending * 0.2) / 9;
+        proteinValue = (caloriesSpending * 0.3) / 4;
+        carbosValue = (caloriesSpending * 0.4) / 4;
+        fatsValue = (caloriesSpending * 0.3) / 9;
       } else if (this.objective == "volume") {
         caloriesSpending = caloriesSpending + caloriesSpending * 0.15;
-        proteinValue = (caloriesSpending * 0.4) / 4;
-        carbosValue = (caloriesSpending * 0.4) / 4;
-        fatsValue = (caloriesSpending * 0.2) / 9;
+        proteinValue = (caloriesSpending * 0.2) / 4;
+        carbosValue = (caloriesSpending * 0.5) / 4;
+        fatsValue = (caloriesSpending * 0.3) / 9;
       }
 
       return {
