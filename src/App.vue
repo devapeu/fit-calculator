@@ -59,9 +59,9 @@
     <ResultsBox v-if="showResult" :results="printedResult"/>
   </div>
   <PromoBox>
-    <h2 class="title">¿Quieres un programa de nutrición personalizado?</h2>
-    <a class="fit__btn fit__btn--outline" href="https://ricardoeliascoach.com/nutricion">Planes de Nutrición para Hombres</a>
-    <a class="fit__btn fit__btn--outline fit__btn--orange" href="https://liaolite.com/nutricion">Planes de Nutrición para Mujeres</a>
+    <h2 class="title">¿Quieres un plan de entrenamiento con guia de nutricion?</h2>
+    <a class="fit__btn fit__btn--outline" href="https://ricardoeliascoach.com/modo-pro-training/">Planes para hombres</a>
+    <a class="fit__btn fit__btn--outline fit__btn--orange" href="https://liaolite.com/modo-pro-training/">Planes para mujeres</a>
   </PromoBox>
 </template>
 
