@@ -39,6 +39,7 @@ export default {
   &__calories
     margin-bottom: 2rem
     &-value
+      margin-top: 0.25rem
       font-size: 3.75rem
       line-height: 1
       font-weight: bold
@@ -62,6 +63,7 @@ export default {
       @media (max-width: 480px)
         font-size: 0.75rem
     &-value
+      margin-top: 0.25rem
       font-size: 2.75rem
       line-height: 1
       font-weight: bold
