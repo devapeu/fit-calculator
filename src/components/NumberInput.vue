@@ -32,6 +32,12 @@ export default {
     padding: 1em
     border: 1px solid var(--primary-color-300)
     border-radius: 0.25rem
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+    &[type="number"]
+      -moz-appearance: textfield
   &__suffix
     position: absolute
     top: 0
