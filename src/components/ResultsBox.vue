@@ -1,24 +1,19 @@
 <template>
-  <div id="result" class="fit__result">
-    <div class="fit__result__left">
+  <div id="result" class="result">
+    <div class="result__calories">
       Tu consumo debería ser:
-      <div class="fit__text-xl">
-        {{ results.calories }}
-        <div class="fit__text-xl__subtitle">calorías por día.</div>
-      </div>
+      <div class="result__calories-value">{{ results.calories }}</div>
+      <div class="result__calories-label">calorías por día.</div>
     </div>
-    <div class="fit__result__right">
-      <ul class="fit__macro-list">
+    <div>
+      <ul class="result__macro-list">
         <li
           v-for="macro in results.macros"
           :key="macro.name"
-          class="fit__macro-list__item"
-        >
-          <div class="fit__macro-list__title">{{ macro.name }}</div>
-          <div class="fit__text-lg">
-            {{ macro.value }}
-            <div class="fit__text-lg__subtitle">gramos al día.</div>
-          </div>
+          class="result__macro-item">
+          <div class="result__macro-title">{{ macro.name }}</div>
+          <div class="result__macro-value">{{ macro.value }}</div>
+          <div class="result__macro-subtitle">gramos al día.</div>
         </li>
       </ul>
     </div>
@@ -28,62 +23,49 @@
 <script>
 export default {
   name: "ResultsBox",
-  props: ["results"],
+  props: {
+    results: {
+      type: Object,
+      required: true,
+    }
+  },
 };
 </script>
 
-<style lang="scss">
-.fit__result {
-  margin: 5rem 0;
-  font-size: 1rem;
-}
-
-.fit__result__left {
-  margin-bottom: 2rem;
-}
-
-.fit__macro-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.fit__macro-list__item {
-  margin-bottom: 1rem;
-}
-
-.fit__macro-list__title {
-  text-transform: uppercase;
-  color: var(--primary-color-500);
-  font-weight: bold;
-  font-size: 0.85rem;
-
-  @media screen and (max-width: 480px) {
-    font-size: 0.75rem;
-  }
-}
-
-.fit__text-xl {
-  font-size: 3.75rem;
-  line-height: 1;
-  font-weight: bold;
-
-  .fit__text-xl__subtitle {
-    font-size: 1.15rem;
-    font-weight: normal;
-  }
-}
-
-.fit__text-lg {
-  font-size: 2.75rem;
-  line-height: 1;
-  font-weight: bold;
-
-  .fit__text-lg__subtitle {
-    font-size: 1rem;
-    font-weight: normal;
-  }
-}
+<style lang="sass">
+.result
+  margin: 5rem 0
+  font-size: 1rem
+  &__calories
+    margin-bottom: 2rem
+    &-value
+      font-size: 3.75rem
+      line-height: 1
+      font-weight: bold
+    &-title
+      font-size: 1.15rem
+      font-weight: normal
+  &__macro
+    &-list
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      padding: 0
+      margin: 0
+      list-style: none
+    &-item
+      margin-bottom: 1rem
+    &-title
+      text-transform: uppercase
+      color: var(--primary-color-500)
+      font-weight: bold
+      font-size: 0.85rem
+      @media (max-width: 480px)
+        font-size: 0.75rem
+    &-value
+      font-size: 2.75rem
+      line-height: 1
+      font-weight: bold
+    &-subtitle
+      font-size: 1rem
+      font-weight: normal
 </style>
