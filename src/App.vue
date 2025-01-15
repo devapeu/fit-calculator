@@ -1,29 +1,29 @@
 <template>
-  <div class="fit__container">
-    <div class="fit__header">
-      <h1 class="fit__header__title">Calcula tus macros</h1>
-      <p class="fit__header__description">Ingresa tus datos y averigua cuántas proteínas, carbohidratos y grasas debes consumir en tu dieta.</p>
+  <div class="container">
+    <div class="header">
+      <h1 class="header__title">Calcula tus macros</h1>
+      <p class="header__description">Ingresa tus datos y averigua cuántas proteínas, carbohidratos y grasas debes consumir en tu dieta.</p>
     </div>
-    <form action="" class="fit__form">
-    <fieldset class="fit__group fit__group--3-col">
-      <h2 class="fit__group__label">Género</h2>
+    <form action="" class="form">
+    <fieldset class="field-group field-group--3-col">
+      <h2 class="field-group__label">Género</h2>
       <RadioInput v-model="gender" name="gender" value="female" :hasCheckIcon="false">Mujer</RadioInput>
       <RadioInput v-model="gender" name="gender" value="male" :hasCheckIcon="false">Hombre</RadioInput>
     </fieldset>
-    <fieldset class="fit__group">
-      <h2 class="fit__group__label">Edad</h2>
+    <fieldset class="field-group">
+      <h2 class="field-group__label">Edad</h2>
       <NumberInput v-model.number="age" name="age"/>
     </fieldset>
-    <fieldset class="fit__group">
-      <h2 class="fit__group__label">Peso</h2>
+    <fieldset class="field-group">
+      <h2 class="field-group__label">Peso</h2>
       <NumberInput v-model.number="weight" name="weight" suffix="kg" />
     </fieldset>
-    <fieldset class="fit__group">
-      <h2 class="fit__group__label">Talla</h2>
+    <fieldset class="field-group">
+      <h2 class="field-group__label">Talla</h2>
       <NumberInput v-model.number="height" name="height" suffix="cm" />
     </fieldset>
-    <fieldset class="fit__group fit__group--3-col">
-      <h2 class="fit__group__label">Nivel de Actividad Física</h2>
+    <fieldset class="field-group field-group--3-col">
+      <h2 class="field-group__label">Nivel de Actividad Física</h2>
       <RadioInput v-model.number="activity" name="activity" value="1.2">
         <p>Sedentario</p>
         <small>Poco o nada de ejercicio.</small>
@@ -45,8 +45,8 @@
         <small>Ejercicio 6-7 días a la semana más un trabajo activo.</small>
       </RadioInput>
     </fieldset>
-    <fieldset class="fit__group fit__group--3-col">
-      <h2 class="fit__group__label">Objetivo</h2>
+    <fieldset class="field-group field-group--3-col">
+      <h2 class="field-group__label">Objetivo</h2>
       <RadioInput v-model="objective" name="objective" value="definition">
         <p>Definición</p>
       </RadioInput>
@@ -54,14 +54,16 @@
         <p>Volumen</p>
       </RadioInput>
     </fieldset>
-    <button class="fit__btn" type="button" @click="printResult">Calcular</button>
+    <button class="button" type="button" @click="printResult">Calcular</button>
     </form>
     <ResultsBox v-if="showResult" :results="printedResult"/>
   </div>
   <PromoBox>
     <h2 class="title">¿Quieres un plan de entrenamiento con guia de nutricion?</h2>
-    <a class="fit__btn fit__btn--outline" href="https://ricardoeliascoach.com/modo-pro-training/">Planes para hombres</a>
-    <a class="fit__btn fit__btn--outline fit__btn--orange" href="https://liaolite.com/modo-pro-training/">Planes para mujeres</a>
+    <div class="button-list">
+      <a class="button button--outline" href="https://ricardoeliascoach.com/modo-pro-training/">Planes para hombres</a>
+      <a class="button button--outline button--orange" href="https://liaolite.com/modo-pro-training/">Planes para mujeres</a>
+    </div>
   </PromoBox>
 </template>
 
@@ -135,107 +137,87 @@ export default {
 };
 </script>
 
-<style lang="scss">
-* {
-  box-sizing: border-box;
-}
+<style lang="sass">
+*
+  box-sizing: border-box
 
-:root {
-  --primary-color-100: #dbeafe;
-  --primary-color-300: #93c5fd;
-  --primary-color-400: #60a5fa;
-  --primary-color-500: #3b82f6;
-  --primary-color-600: #2563eb;
-  --gray-50: #f8fafc;
-  --gray-900: #0f172a;
-}
+:root
+  --primary-color-100: #dbeafe
+  --primary-color-300: #93c5fd
+  --primary-color-400: #60a5fa
+  --primary-color-500: #3b82f6
+  --primary-color-600: #2563eb
+  --gray-50: #f8fafc
+  --gray-900: #0f172a
 
-body {
-  background-color: var(--gray-50);
-}
+body
+  background-color: var(--gray-50)
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
+h1, h2, h3, h4, h5, h6
+  margin: 0
 
-#app {
-  font-family: "Ubuntu", sans-serif;
-  color: var(--gray-900);
-}
+#app
+  font-family: "Ubuntu", sans-serif
+  color: var(--gray-900)
 
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
+fieldset
+  margin: 0
+  padding: 0
+  border: none
 
-.fit__container {
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+.container
+  max-width: 36rem
+  margin: 0 auto
+  padding: 0 1rem
 
-}
+.header
+  margin: 2rem 0 2rem 0
+  &__title
+    margin-bottom: 0.25rem
+  &__description
+    line-height: 1.35
+    margin: 0
 
-.fit__header {
-  margin: 2rem 0 2rem 0;
+.form
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 1.5rem 1rem
 
-  .fit__header__title {
-    margin-bottom: 0.25rem;
-  }
+.field-group
+  &__label
+    text-transform: uppercase
+    font-size: 0.85rem
+    margin-bottom: 0.66rem
+  &--3-col
+    grid-column: span 3
 
-  .fit__header__description {
-    line-height: 1.35;
-    margin: 0;
-  }
-}
+.button-list
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 2rem
+  width: 100%
+  gap: 1rem
 
-
-.fit__group__label {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  margin-bottom: 0.66rem;
-}
-
-.fit__form {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.5rem 1rem;
-}
-
-.fit__group {
-  &.fit__group--3-col {
-    grid-column: span 3;
-  }
-}
-
-.fit__btn {
-  font-family: "Ubuntu", sans-serif;
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  font-size: 1.25rem;
-  padding: 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: var(--primary-color-500);
-  grid-column: span 3;
-
-  &.fit__btn--outline {
-    margin: 2rem 0 0;
-    font-size: 1rem;
-    background-color: var(--gray-50);
-    border: 2px solid var(--primary-color-500);
-    color: var(--primary-color-500);
-
-    &.fit__btn--orange {
-      margin-left: 1rem;
-      border: 2px solid #ea580c;
-      color: #ea580c;
-
-      @media screen and (max-width: 480px) {
-        margin-left: 0;
-      }
-    }
-  }
-}
+.button
+  font-family: "Ubuntu", sans-serif
+  text-decoration: none
+  display: inline-block
+  color: white
+  font-size: 1.25rem
+  padding: 1rem
+  border: none
+  border-radius: 0.25rem
+  background-color: var(--primary-color-500)
+  grid-column: span 3
+  cursor: pointer
+  &--outline
+    font-size: 1rem
+    background-color: var(--gray-50)
+    border: 2px solid var(--primary-color-500)
+    color: var(--primary-color-500)
+  &--orange
+    border: 2px solid #ea580c
+    color: #ea580c
 </style>
