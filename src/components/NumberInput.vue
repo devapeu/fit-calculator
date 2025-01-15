@@ -6,6 +6,7 @@
       :name="name"
       @input="$emit('update:modelValue', $event.target.value)"
       class="input__field"
+      min="0"
     />
     <span class="input__suffix">{{ suffix }}</span>
   </label>
